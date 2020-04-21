@@ -2,24 +2,22 @@
 ::
 
    $ call-graph
-   usage: call-graph module func
+   usage: call-graph [-h] [-p PATH] [-u] [-o] [-n NO_TARGET] module func
+   call-graph: error: the following arguments are required: module, func
    
    $ call-graph call_graph main
    main
+   ├ get_names
    ├ get_call_graph
-   │└ getclosurevars
-   │　├ ismethod
-   │　├ isfunction
-   │　└ ismodule
    └ call_graph_view
-   　└ pairwise
 
-* "no_target" is used for ignoring names.
+* "NO_TARGET" is used for ignoring names.
 * Methods are ignored.
+* Use `_ = function` for dummy call.
 
 Requirements
 ------------
-* Python 3.7 later
+* Python 3.8 later, more-itertools
 
 Features
 --------

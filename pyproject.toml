@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "call-graph"
-version = "0.0.2"
+version = "0.0.3"
 description = "`call-graph` is a package for viewing call graph."
 authors = ["SaitoTsutomu <tsutomu7@hotmail.co.jp>"]
 homepage = "https://github.com/SaitoTsutomu/call-graph"
@@ -19,6 +19,7 @@ call-graph = "call_graph:main"
 
 [tool.poetry.dependencies]
 python = "^3.8"
+more-itertools = "^8.2.0"
 
 [tool.poetry.dev-dependencies]
 pytest = "^5.2"
