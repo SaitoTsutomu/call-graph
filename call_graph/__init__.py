@@ -6,7 +6,7 @@ from itertools import chain
 from more_itertools import pairwise
 
 # see pyproject.toml
-__version__ = "0.0.1"
+__version__ = "0.0.2"
 __author__ = "SaitoTsutomu <tsutomu7@hotmail.co.jp>"
 
 

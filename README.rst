@@ -29,7 +29,7 @@ Setup
 -----
 ::
 
-   $ pip install call-grph
+   $ pip install call-graph
 
 History
 -------
