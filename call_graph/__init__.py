@@ -68,6 +68,6 @@ def main():
     args = parser.parse_args()
     no_target = get_names(args.no_target)
     print(args.func)
-    func = __import__(args.module).__getattribute__(args.func)
+    func = getattr(__import__(args.module), args.func)
     call_graph = get_call_graph(func, args.path, no_target, args.use)
     call_graph_view(call_graph, "", args.only)
