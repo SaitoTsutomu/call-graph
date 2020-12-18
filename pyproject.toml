@@ -1,33 +1,33 @@
 [tool.poetry]
-name = "call-graph"
-version = "0.0.3"
-description = "`call-graph` is a package for viewing call graph."
 authors = ["SaitoTsutomu <tsutomu7@hotmail.co.jp>"]
-homepage = "https://github.com/SaitoTsutomu/call-graph"
 classifiers = [
-   "Development Status :: 1 - Planning",
-   "License :: OSI Approved :: Python Software Foundation License",
-   "Programming Language :: Python",
-   "Topic :: Software Development",
-   "Topic :: Scientific/Engineering",
+  "Development Status :: 1 - Planning",
+  "License :: OSI Approved :: MIT License",
+  "Programming Language :: Python",
+  "Topic :: Software Development",
+  "Topic :: Scientific/Engineering",
 ]
-license = "PSFL"
+description = "`call-graph` is a package for viewing call graph."
+homepage = "https://github.com/SaitoTsutomu/call-graph"
+license = "MIT"
+name = "call-graph"
 readme = "README.rst"
+version = "0.0.4"
 
 [tool.poetry.scripts]
 call-graph = "call_graph:main"
 
 [tool.poetry.dependencies]
-python = "^3.8"
 more-itertools = "^8.2.0"
+python = "^3.8"
 
 [tool.poetry.dev-dependencies]
-pytest = "^5.2"
-flake8 = "^3.7.9"
 black = "^19.10b0"
+flake8 = "^3.7.9"
 isort = "^4.3.21"
 mypy = "^0.770"
+pytest = "^5.2"
 
 [build-system]
-requires = ["poetry>=0.12"]
 build-backend = "poetry.masonry.api"
+requires = ["poetry>=0.12"]
