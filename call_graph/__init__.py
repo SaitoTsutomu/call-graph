@@ -6,7 +6,7 @@ from itertools import chain
 from more_itertools import pairwise
 
 # see pyproject.toml
-__version__ = "0.0.3"
+__version__ = "0.1.0"
 __author__ = "SaitoTsutomu <tsutomu7@hotmail.co.jp>"
 
 
@@ -22,11 +22,7 @@ def _target(f, path, done, use):
 def get_call_graph(func, path, done, use):
     gcl = getclosurevars(func).globals
     done |= {func.__name__}
-    return {
-        k: get_call_graph(f, path, done, use)
-        for k, f in gcl.items()
-        if _target(f, path, done, use)
-    }
+    return {k: get_call_graph(f, path, done, use) for k, f in gcl.items() if _target(f, path, done, use)}
 
 
 def call_graph_view(call_graph, pre, only):
@@ -53,18 +49,10 @@ def main():
     parser = argparse.ArgumentParser(description=main.__doc__)
     parser.add_argument("module", help="Target module")
     parser.add_argument("func", help="Target function")
-    parser.add_argument(
-        "-p", "--path", default="/lib/python3", help="Sub path of library."
-    )
-    parser.add_argument(
-        "-u", "--use", default=False, help="Use private function.", action="store_true"
-    )
-    parser.add_argument(
-        "-o", "--only", default=False, help="Show only name.", action="store_true"
-    )
-    parser.add_argument(
-        "-n", "--no-target", default="", help="File which contains name of no target."
-    )
+    parser.add_argument("-p", "--path", default="/lib/python3", help="Sub path of library.")
+    parser.add_argument("-u", "--use", default=False, help="Use private function.", action="store_true")
+    parser.add_argument("-o", "--only", default=False, help="Show only name.", action="store_true")
+    parser.add_argument("-n", "--no-target", default="", help="File which contains name of no target.")
     args = parser.parse_args()
     no_target = get_names(args.no_target)
     print(args.func)
